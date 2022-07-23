@@ -9,9 +9,9 @@ class Character:
         self.life = life
 
 #metoda zawierająca technikę walki postaci oraz zadawany damage
-    def fight(self):
+    def fight(self, opponent):
         print(self.name + self.attack)
-        return self.damage
+        opponent.life = opponent.life - self.damage
 
 #klasa dzieciczącą z postaci - czarodziej
 #czarodziej zadaje zawsze damage, ale nieznaczny
@@ -25,27 +25,23 @@ class Wizzard(Character):
 class Knight(Character):
     def __init__(self):
         super().__init__(name="Knight", attack= " stabbed with a sword", damage=20)
-    def fight(self):
+    def fight(self, opponent):
         print("Knight makes an attempt")
         x = random.randint(0,1)
         if x == 1:
-            super().fight()
-            return self.damage
+            super().fight(opponent)
         else:
             print("Wizzard used protection spell")
-            return 0
 
 #tworzę postaci
 wizzard = Wizzard()
 knight = Knight()
 
-#tworzę walkę pomiędzy utworzonymi postaciami 
+#tworzę walkę pomiędzy postaciami 
 def battle():
     while wizzard.life>0 and knight.life>0:
-        a = wizzard.fight()
-        knight.life = knight.life-a
-        b = knight.fight()
-        wizzard.life = wizzard.life-b
+        wizzard.fight(knight)
+        knight.fight(wizzard)
     else:
         if wizzard.life == 0:
             print("Knight has killed wizzard. Long live the king!")
@@ -54,7 +50,3 @@ def battle():
 
 battle()
 
-#mniej ważne propozycje na funkcjonalności:
-#gdy życie wynosi połowę - powinna się pojawić taka informacja
-#gdy życie wynosi 10 - informacja
-#losowe jest kto zaczyna
