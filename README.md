@@ -1,14 +1,11 @@
 # General info
 ## About the Game
-------
 'Battles' is a two players game that gives you the opportunity to get into the role of a sinister wizzard or a knight loyal to the king. Face the powerful, but not always accurate knight's strikes or flawless moderately strong wizzard's magic. Who will triumph in battle? The fate of the kingdom depends on you.
 
 ## About the project
-------
 For me this project is the introduction to object-oriented and event-driven programming.
 
 ## How to Play
-------
 Characters are reprezented by the squares on the board:
 green square - wizzard
 purple square - knight
@@ -36,13 +33,11 @@ Half of knight's attempts of attack are successful and they cause 20 health poin
 The game ends when one of the characters triumphs.
 
 ## Technologies
-------
 Project is created with:
 * python
 * pygame
 
 ## Setup
-------
 Open PowerShell terminal and run:
 1. Clone the repository
 ```sh
