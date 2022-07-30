@@ -34,7 +34,7 @@ class Character:
     def attack(self, opponent):
         if self.calculate_distance(opponent) < 100:
             self.fight(opponent)
-            print(opponent.name, "has ", opponent.life, " life left")
+            print(opponent.name, "has ", opponent.life," health points left")
         else:
             print("Za daleko!")
 
